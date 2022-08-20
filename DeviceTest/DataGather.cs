@@ -18,6 +18,8 @@ public class DataGather
         this.hf2li = hf2li;
         this.mfli = mfli;
     }
+
+    /*
     private static bool isDeviceFamily(ziDotNET daq, string dev, String family)
     {
         String path = String.Format("/{0}/features/devtype", dev);
@@ -34,13 +36,14 @@ public class DataGather
             return;
         }
     }
+    */
 
     public double get_data(int CH)
     {
         //let controller type be controlled in settings
         //string data_controller_type = Properties.Settings.Default.data_controller; (original code from Greg)
 
-        string data_controller_type = controller_type;
+        string data_controller_type = "MFLI";
         switch (data_controller_type)
         {
             case "HF2LI":

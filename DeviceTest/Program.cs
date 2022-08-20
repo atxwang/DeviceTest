@@ -35,7 +35,7 @@ class Program
             {
                 var key = Console.ReadKey(true);
 
-                dataGather.set_controller_type(daq, "dev5488"); //represent from settings?
+                //dataGather.set_controller_type(daq, "dev5488"); //represent from settings?
 
                 switch (key.Key)
                 {
@@ -43,19 +43,19 @@ class Program
                         Console.WriteLine(dataGather.get_data(1));
                         break;
                     case ConsoleKey.D2:
-                        Console.WriteLine(dataGather.get_data(1));
+                        Console.WriteLine(dataGather.get_data(2));
                         break;
                     case ConsoleKey.D3:
-                        Console.WriteLine(dataGather.get_data(1));
+                        Console.WriteLine(dataGather.get_data(3));
                         break;
                     case ConsoleKey.D4:
-                        Console.WriteLine(dataGather.get_data(1));
+                        Console.WriteLine(dataGather.get_data(4));
                         break;
                     case ConsoleKey.D5:
-                        Console.WriteLine(dataGather.get_data(1));
+                        Console.WriteLine(dataGather.get_data(5));
                         break;
                     case ConsoleKey.D6:
-                        Console.WriteLine(dataGather.get_data(1));
+                        Console.WriteLine(dataGather.get_data(6));
                         break;
                     case ConsoleKey.Q:
                         Environment.Exit(0);
