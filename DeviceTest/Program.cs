@@ -21,13 +21,12 @@ class Program
 {
     private static void Main(string[] args)
     {
-
         ziDotNET daq = new ziDotNET();
+        
+        //HF2LI hf2li = new HF2LI();
+        MFLI mfli = new MFLI("dev5488");
 
-        HF2LI hf2li = new HF2LI();
-        MFLI mfli = new MFLI();
-
-        DataGather dataGather = new DataGather(hf2li, mfli);
+        //DataGather dataGather = new DataGather(hf2li, mfli);
 
         while (true)
         {
@@ -35,8 +34,12 @@ class Program
             {
                 var key = Console.ReadKey(true);
 
-                //dataGather.set_controller_type(daq, "dev5488"); //represent from settings?
+                if (key.Key == ConsoleKey.D1)
+                {
+                    Console.WriteLine(mfli.testconnection());
+                }
 
+                /*
                 switch (key.Key)
                 {
                     case ConsoleKey.D1:
@@ -63,6 +66,7 @@ class Program
                     default:
                         break;
                 }
+                */
             }
         }
     }
