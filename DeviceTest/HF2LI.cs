@@ -288,7 +288,7 @@ namespace HF2LI_namespace
                 //List<double> Amplitude;
                 //Tuple<List<double>, List<double>> returnvalue;
                 double[,] returnvalue;
-                returnvalue = readBack_demod(); //why is this a double array
+                returnvalue = readBack_demod(); 
                 return returnvalue;
             }
             else

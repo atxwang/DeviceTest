@@ -28,6 +28,14 @@ class Program
 
         //DataGather dataGather = new DataGather(hf2li, mfli);
 
+        Console.WriteLine(mfli.testconnection());
+        int[] input = {0, 1, 2, 3};
+        double[] output = mfli.get_data(input);
+        for (int i = 0; i < 4; i++)
+        {
+            Console.WriteLine(output[i].ToString());
+        }
+
         while (true)
         {
             if (Console.KeyAvailable)
@@ -36,80 +44,10 @@ class Program
 
                 if (key.Key == ConsoleKey.D1)
                 {
-                    Console.WriteLine(mfli.testconnection());
+                    Console.WriteLine(mfli.close_conn());
                 }
-
-                /*
-                switch (key.Key)
-                {
-                    case ConsoleKey.D1:
-                        Console.WriteLine(dataGather.get_data(1));
-                        break;
-                    case ConsoleKey.D2:
-                        Console.WriteLine(dataGather.get_data(2));
-                        break;
-                    case ConsoleKey.D3:
-                        Console.WriteLine(dataGather.get_data(3));
-                        break;
-                    case ConsoleKey.D4:
-                        Console.WriteLine(dataGather.get_data(4));
-                        break;
-                    case ConsoleKey.D5:
-                        Console.WriteLine(dataGather.get_data(5));
-                        break;
-                    case ConsoleKey.D6:
-                        Console.WriteLine(dataGather.get_data(6));
-                        break;
-                    case ConsoleKey.Q:
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        break;
-                }
-                */
             }
         }
     }
 }
-
-/*
-while (true)
-{
-   if (Console.KeyAvailable)
-   {
-       var key = Console.ReadKey(true);
-
-       dataGather.set_controller_type(daq, "dev968"); //represent from settings?
-
-       switch (key.Key)
-       {
-           case ConsoleKey.D1:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.D2:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.D3:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.D4:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.D5:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.D6:
-               Console.WriteLine(dataGather.get_data(1));
-               break;
-           case ConsoleKey.Q:
-               System.Environment.Exit(0);
-               break;
-           default:
-               break;
-       }
-   }
-}
-*/
-
-//daq.disconnect();
 
