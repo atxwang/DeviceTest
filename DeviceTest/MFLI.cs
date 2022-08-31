@@ -111,8 +111,8 @@ namespace MFLI_namespace
             }
             else
             {
-                //daq.setInt("/" + devstr + "/demods/" + CH + "/enable", 1);
-                String path = "/" + devstr + "/demods/0/sample";
+                String path = "/" + devstr + "/demods/" + CH.ToString() + "/sample";
+                /*
                 daq.subscribe(path);
                 Lookup lookup = daq.poll(0.1, 5, 0, 1);
 
@@ -121,16 +121,16 @@ namespace MFLI_namespace
                 Chunk[] chunks = lookup[path]; 
                 Chunk chunk = lookup[path][0];  
                 */
-                                               
-                ZIDemodSample[] demodSamples = lookup[path][0].demodSamples;
-               
+
+                //ZIDemodSample[] demodSamples = lookup[path][0].demodSamples;
+                /*
                 ZIDemodSample sample = lookup[path][0].demodSamples[0];
+                */
+                ZIDemodSample sample = daq.getDemodSample(path);
 
                 double X = sample.x;
                 double Y = sample.y;
                 double R = Math.Sqrt(X * X + Y * Y);
-
-                Debug.Assert(0 != sample.timeStamp);
 
                 return R;
             }

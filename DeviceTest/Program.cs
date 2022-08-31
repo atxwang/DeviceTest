@@ -27,14 +27,16 @@ class Program
         MFLI mfli = new MFLI("dev5488");
 
         //DataGather dataGather = new DataGather(hf2li, mfli);
-
+        
         Console.WriteLine(mfli.testconnection());
+        /*
         int[] input = {0, 1, 2, 3};
         double[] output = mfli.get_data(input);
         for (int i = 0; i < 4; i++)
         {
             Console.WriteLine(output[i].ToString());
         }
+        */
 
         while (true)
         {
@@ -45,6 +47,15 @@ class Program
                 if (key.Key == ConsoleKey.D1)
                 {
                     Console.WriteLine(mfli.close_conn());
+                }
+                if (key.Key == ConsoleKey.D2)
+                {
+                    int[] input = { 0, 0, 0, 0 };
+                    double[] output = mfli.get_data(input);
+                    for (int i = 0; i < 4; i++)
+                    {
+                        Console.WriteLine(output[i].ToString());
+                    }
                 }
             }
         }
